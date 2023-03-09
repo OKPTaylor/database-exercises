@@ -28,10 +28,10 @@ SELECT * FROM employees
 WHERE hire_date LIKE "199%"
 LIMIT 3; -- 8
 SELECT * FROM employees 
-WHERE birth_date LIKE "%-25"
+WHERE birth_date LIKE "%12-25"
 LIMIT 3; -- 9
 SELECT * FROM employees 
-WHERE birth_date LIKE "%-25" AND hire_date LIKE "199%"
+WHERE birth_date LIKE "%12-25" AND hire_date LIKE "199%"
 LIMIT 3; -- 10
 SELECT DISTINCT last_name FROM employees
 WHERE last_name LIKE "%q%"; -- 11
@@ -58,8 +58,8 @@ SELECT DISTINCT first_name, last_name, hire_date FROM employees
 WHERE last_name LIKE "%E" and last_name LIKE "E%"
 ORDER BY hire_date DESC; -- 6 899 Teiji Eldridge and Sergi Erde
 SELECT * FROM employees 
-WHERE birth_date LIKE "%-25" AND hire_date LIKE "199%"
-ORDER BY birth_date, hire_date DESC; -- 7 4480 returned Amestein Undy and Poornachandra Wilharm
+WHERE birth_date LIKE "%12-25" AND hire_date LIKE "199%"
+ORDER BY birth_date, hire_date DESC; -- 7 362 returned Amestein Undy and Poornachandra Wilharm
 
 
 
