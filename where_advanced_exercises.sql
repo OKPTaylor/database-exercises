@@ -4,14 +4,14 @@ SHOW TABLES;
 SELECT * FROM employees;
 SELECT * FROM employees
 WHERE first_name IN ('Irena', "Vidya", 'Maya')
-LIMIT 3; -- 1
+LIMIT 3; -- 1 10200, 10397, 10610
 SELECT * FROM employees
 WHERE first_name = 'Irena'
 OR first_name = 'Vidya'
 OR first_name = 'Maya'
 LIMIT 3; -- 2 yes
 SELECT * FROM employees
-WHERE gender = 'm' AND
+WHERE gender = 'M' AND
 (first_name = 'Irena'
 OR first_name = 'Vidya'
 OR first_name = 'Maya')
@@ -23,15 +23,15 @@ WHERE last_name LIKE "E%" or last_name LIKE "%E"; -- 5
 SELECT DISTINCT last_name FROM employees
 WHERE last_name LIKE "%E" and last_name NOT LIKE "E%"; -- 6
 SELECT DISTINCT last_name FROM employees
-WHERE last_name LIKE "%E" and last_name LIKE "E%"; -- 7
+WHERE last_name LIKE "%E" and last_name LIKE "E%"; -- 7 can be written like "e%e"
 SELECT * FROM employees 
 WHERE hire_date LIKE "199%"
 LIMIT 3; -- 8
 SELECT * FROM employees 
-WHERE birth_date LIKE "%-25"
+WHERE birth_date LIKE "%12-25"
 LIMIT 3; -- 9
 SELECT * FROM employees 
-WHERE birth_date LIKE "%-25" AND hire_date LIKE "199%"
+WHERE birth_date LIKE "%12-25" AND hire_date LIKE "199%"
 LIMIT 3; -- 10
 SELECT DISTINCT last_name FROM employees
 WHERE last_name LIKE "%q%"; -- 11
