@@ -61,7 +61,7 @@ SELECT * FROM employees
 WHERE birth_date LIKE "%12-25" AND hire_date LIKE "199%"
 ORDER BY birth_date, hire_date DESC; -- 7 362 returned Amestein Undy and Poornachandra Wilharm
 -- 1
-SELECT DISTINCT first_name, last_name, hire_date, CONCAT(first_name, " ", last_name) as full_name  FROM employees
+SELECT DISTINCT first_name, last_name, CONCAT(first_name, " ", last_name) as full_name  FROM employees
 WHERE last_name LIKE "%E" and last_name LIKE "E%"; -- 2
 SELECT DISTINCT first_name, last_name, hire_date, CONCAT(UPPER(first_name), " ", UPPER(last_name)) as full_name  FROM employees
 WHERE last_name LIKE "%E" and last_name LIKE "E%"; -- 3
@@ -70,9 +70,9 @@ WHERE last_name LIKE "%E" and last_name LIKE "E%"; -- 4
 SELECT CONCAT(UPPER(first_name), " ", UPPER(last_name)), hire_date, birth_date, Datediff(curdate(), hire_date) AS number_of_days_employed FROM employees 
 WHERE birth_date LIKE "%12-25" AND hire_date LIKE "199%"; -- 5
 SELECT * FROM salaries;
-SELECT MAX(salary), MIN(salary) FROM salaries; -- 6
-SELECT first_name, last_name, birth_date, 
-CONCAT(LOWER(SUBSTR(first_name, 1, 1)), lower(SUBSTR(last_name, 1, 4)),"_", SUBSTR(birth_date,6,2), SUBSTR(birth_date,3,2)) as username 
+SELECT MAX(salary), MIN(salary) FROM salaries
+WHERE to_date > now(); -- 6
+SELECT CONCAT(LOWER(SUBSTR(first_name, 1, 1)), lower(SUBSTR(last_name, 1, 4)),"_", SUBSTR(birth_date,6,2), SUBSTR(birth_date,3,2)) as username, first_name, last_name, birth_date 
 FROM employees; -- 7
 
 
