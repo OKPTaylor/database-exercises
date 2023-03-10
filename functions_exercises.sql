@@ -73,7 +73,7 @@ SELECT * FROM salaries;
 SELECT MAX(salary), MIN(salary) FROM salaries
 WHERE to_date > now(); -- 6
 SELECT CONCAT(LOWER(SUBSTR(first_name, 1, 1)), lower(SUBSTR(last_name, 1, 4)),"_", SUBSTR(birth_date,6,2), SUBSTR(birth_date,3,2)) as username, first_name, last_name, birth_date 
-FROM employees; -- 7
+FROM employees; -- 7 can do left(first_name, 1) can also do date_format(birthday, '%m%y')
 
 
 
